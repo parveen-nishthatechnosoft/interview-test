@@ -1,0 +1,16 @@
+Problem :
+Title: Handling Concurrent Orders in Laravel
+Objective: Develop a mechanism to handle the scenario where multiple users attempt to purchase the same product simultaneously, but the available stock is insufficient to fulfill all orders.
+
+Context: You are tasked with enhancing an eCommerce site built with Laravel to manage concurrent orders effectively. The challenge is to ensure that the system can fairly and accurately allocate a limited stock of products to users who attempt to purchase at the same time.
+Scenario:
+
+10 users try to purchase the same product at the same time.
+There are only 5 units of the product available in stock.
+You need to develop a method to handle this situation ensuring data consistency and fairness.
+
+Solution :
+As per my understanding and experience here i am sharing solution :
+
+1. User who have added item/product in cart first we will restrict that product to add in cart for other users
+2. User having product in cart have a time frame like 3 minutes to complete with payment process, if user is unable to do that in given time-slot then that item is available for other users to add in cart and same process starts for those users.
